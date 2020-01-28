@@ -63,18 +63,16 @@ module.exports.menu = {
                     uri: 'line://app/1653803012-5QJqJ4PP',
                     },
                 },
-                {
-                    type: 'button',
-                    action: {
-                        type: 'action',
-                        label: 'Mytask',
-                        action:{
-                            "type": "message",
-                            "label": "mytask",
-                            "text": "mytask"
-                        }
-                        },
-                    },
+                // {
+                //     type: 'button',
+                //     label: 'Mytask',
+                //     action: {
+                //         "type": "message",
+                //         "label": "mytask",
+                //         "text": "mytask"
+                //         }
+                    
+                // },
                 ],
             },
         });
