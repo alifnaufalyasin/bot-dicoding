@@ -1,6 +1,6 @@
-module.exports.info = {
-    command: 'info',
-    description: 'desc',
+module.exports.help = {
+    command: 'help',
+    description: 'information about this bot',
     method: async context => {
         console.log('info')
         context.send([{
