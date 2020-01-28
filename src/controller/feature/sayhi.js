@@ -1,5 +1,5 @@
 module.exports.sayhi = {
-    command: ['hi','hai','halo','hello'],
+    command: 'hi',
     description: 'greetings',
     method: async context => {
         try{
