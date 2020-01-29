@@ -24,7 +24,7 @@ const App = async context => {
   } else if (context.event.isUnfollow) {
     context.send([{
         "type": "text",
-        "text": "Terimakasih sudah mempercayakan kami untuk membantu kamu dalam menyimpan tugas2 mu \n mohon maaf jika kami kurang membantu"
+        "text": "Terimakasih sudah mempercayakan kami untuk membantu kamu dalam menyimpan tugas2 mu, mohon maaf jika kami kurang membantu"
     },{ 
       "type": "text", 
       "text": "Jangan sungkan-sungkan untuk add kami kembali ya"

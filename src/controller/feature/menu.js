@@ -4,13 +4,13 @@ module.exports.menu = {
     method: async context => {
         await context.sendFlex('Task Menu', {
             type: 'bubble',
-            // hero: {
-            //     type: 'image',
-            //     url: ,
-            //     size: 'full',
-            //     aspectRatio: '20:13',
-            //     aspectMode: 'cover',
-            // },
+                // hero: {
+                //     type: 'image',
+                //     url: ,
+                //     size: 'full',
+                //     aspectRatio: '20:13',
+                //     aspectMode: 'cover',
+                // },
             body: {
                 type: 'box',
                 layout: 'vertical',
