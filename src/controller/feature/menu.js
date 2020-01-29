@@ -19,7 +19,7 @@ module.exports.menu = {
                     type: 'text',
                     text: 'Save My Task',
                     weight: 'bold',
-                    size: 'xl',
+                    size: 'lg',
                 }],
             },
             footer: {
