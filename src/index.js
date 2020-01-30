@@ -11,16 +11,41 @@ const App = async context => {
     //   statusMessage: 'Hello, LINE!',
     // }
   })  
+  const MongoClient = require('mongodb').MongoClient;
+  const uri = `mongodb+srv://adminbot:${process.env.PASSWORD_MONGO_DB}@bot-linecoba-78zrv.gcp.mongodb.net/test?retryWrites=true&w=majority`;
+  const client = new MongoClient(uri, { useNewUrlParser: true });
   try{
   if (context.event.isFollow) {
-    context.send([{
+    await client.connect(async err => {
+      const database = client.db("bot-dicoding")
+      database.listCollections().toArray(async function(err, colnamedb) {
+        // collInfos is an array of collection info objects that look like:
+        // { name: 'test', options: {} }
+        console.log('collect search')        
+        // console.log(colnamedb[0].name)
+        let found = false;
+        for(let i=0;i<colnamedb.length;i++){
+          if (colnamedb[i].name == profileuser.userId) found = true; 
+          //search collection of userId  
+        }
+        if(!found){
+          await database.createCollection(profileuser.userId, function(err, res) { 
+            //if not found, create collection for user
+            if (err) throw err;
+            console.log("Collection created!")
+            client.close()
+          }) 
+        }else console.log('sudah ada')
+      });
+    })
+    await context.send([{
       "type": "text",
       "text": "Terimakasih sudah mempercayakan kami untuk membantu kamu dalam menyimpan tugas2 mu"
     },{ 
       "type": "text",
       "text": "Untuk petunjuk penggunaan bisa dilihat di timeline kami"
-    }])
-    console.log(context.event.follow);
+    }]),
+    console.log(context.event.follow)
   } else if (context.event.isUnfollow) {
     context.send([{
         "type": "text",
@@ -32,9 +57,6 @@ const App = async context => {
     console.log(context.event.unfollow);
   } else 
   if (context.event.isText) {
-    const MongoClient = require('mongodb').MongoClient;
-    const uri = `mongodb+srv://adminbot:${process.env.PASSWORD_MONGO_DB}@bot-linecoba-78zrv.gcp.mongodb.net/test?retryWrites=true&w=majority`;
-    const client = new MongoClient(uri, { useNewUrlParser: true });
     await client.connect(async err => {
       const collection = client.db("bot-dicoding").collection("user");
       // perform actions on the collection object

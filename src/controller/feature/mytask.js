@@ -2,42 +2,62 @@ module.exports.mytask = {
     command: 'mytask',
     description: 'show task of user',
     method: async context => {
-        let kata = []
-        const program = () => {
-            for (let i=0;i<3;i++){
-                kata[i] = 
+        var kata = []
+        let profileuser;
+        await context.getUserProfile().then(profile => {
+            profileuser = profile
+            // {
+            //   displayName: 'LINE taro',
+            //   userId: USER_ID,
+            //   pictureUrl: 'http://obs.line-apps.com/...',
+            //   statusMessage: 'Hello, LINE!',
+            // }
+        })
+        const MongoClient = require('mongodb').MongoClient;
+        const uri = `mongodb+srv://adminbot:${process.env.PASSWORD_MONGO_DB}@bot-linecoba-78zrv.gcp.mongodb.net/test?retryWrites=true&w=majority`;
+        const client = new MongoClient(uri, { useNewUrlParser: true });
+        await client.connect()
+        const collection = client.db("bot-dicoding").collection(profileuser.userId);
+        let datacollection = await collection.find({}).toArray()
+        client.close()
+        console.log(datacollection)
+        let idx = datacollection.length
+        console.log(idx)
+        // console.log(datacollection)                
+        for (let i=0;i<idx;i++){
+            if (datacollection[i].status){
+            kata[i] = 
+            {
+                "type": "box",
+                "layout": "baseline",
+                "spacing": "sm",
+                "contents": [
                 {
-                    "type": "box",
-                    "layout": "baseline",
-                    "spacing": "sm",
-                    "contents": [
-                      {
-                        "type": "text",
-                        "text": "ID"+i,
-                        "color": "#505050",
-                        "size": "sm",
-                        "flex": 1,
-                        "decoration": "underline"
-                      },
-                      {
-                        "type": "text",
-                        "text": 'PR DAA '+i,
-                        "wrap": true,
-                        "color": "#505050",
-                        "size": "sm",
-                        "flex": 10,
-                        "action": {
-                            "type": "message",
-                            "label": "action",
-                            "text": "."
-                        }
-                      }
-                    ]
-                  }
-                
+                    "type": "text",
+                    "text": datacollection[i].id,
+                    "color": "#505050",
+                    "size": "sm",
+                    "flex": 1,
+                    "decoration": "underline"
+                },
+                {
+                    "type": "text",
+                    "text": datacollection[i].task,
+                    "wrap": true,
+                    "color": "#505050",
+                    "size": "sm",
+                    "flex": 10,
+                    "action": {
+                        "type": "message",
+                        "label": "action",
+                        "text": "."
+                    }
+                }
+                ]
+            }
             }
         }
-        await program()
+        // console.log(kata);
         await context.sendFlex('user task', {
             type: 'bubble',
             body: {
@@ -55,30 +75,7 @@ module.exports.mytask = {
                 type: 'box',
                 layout: 'vertical',
                 margin: 'lg',
-                contents: kata
-                    // [{
-                    // type: 'text',
-                    // text: 'PR DAA',
-                    // wrap: true,
-                    // color: '#404040', 
-                    // size: 'sm',
-                    // flex: 11,
-                    // },
-                    // {
-                    // "type": "separator",
-                    // "margin": "sm",
-                    // "color": "#000000"
-                    // },
-                    // {
-                    // type: 'text',
-                    // text: 'PR SBD',
-                    // wrap: true,
-                    // color: '#404040', 
-                    // size: 'sm',
-                    // flex: 11,
-                    // }
-                    // ]
-                    ,
+                contents: kata,
             },
         });
     }
