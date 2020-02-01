@@ -50,7 +50,7 @@ module.exports.mytask = {
                     "action": {
                         "type": "message",
                         "label": "action",
-                        "text": "hapus "+datacollection[i].id
+                        "text": `hapus ${datacollection[i].id}`
                     }
                 }
                 ]
