@@ -20,7 +20,7 @@ module.exports.tambah = {
             const collection = client.db("bot-dicoding").collection(profileuser.userId);
             let idx = await collection.count()
             console.log(idx)            
-            const myobj = { id: 'ID'+(idx+1),status:true, task: text };
+            const myobj = { id: 'ID'+(idx+1),status: true, task: text };
             console.log(myobj)            
             await collection.insertOne(myobj, function(err, res) {
                 if (err) throw err;

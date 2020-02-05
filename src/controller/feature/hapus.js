@@ -23,7 +23,7 @@ module.exports.hapus = {
             collection.updateOne(myquery, newvalues, function(err, res) {
                 if (err) throw err;
                 console.log("1 document updated");
-                db.close();
+                client.close();
               });
         })
     },

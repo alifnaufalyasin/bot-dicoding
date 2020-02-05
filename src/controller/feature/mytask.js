@@ -20,45 +20,47 @@ module.exports.mytask = {
         const collection = client.db("bot-dicoding").collection(profileuser.userId);
         let datacollection = await collection.find({}).toArray()
         client.close()
-        console.log(datacollection)
+        // console.log(datacollection)
         let idx = datacollection.length
         console.log(idx)
-        // console.log(datacollection)                
+        // console.log(datacollection)
+        let index = 0;                
         for (let i=0;i<idx;i++){
             if (datacollection[i].status){
-            kata[i] = 
-            {
-                "type": "box",
-                "layout": "baseline",
-                "spacing": "sm",
-                "contents": [
+                kata[index] = 
                 {
-                    "type": "text",
-                    "text": datacollection[i].id,
-                    "color": "#505050",
-                    "size": "sm",
-                    "flex": 1,
-                    "decoration": "underline"
-                },
-                {
-                    "type": "text",
-                    "text": datacollection[i].task,
-                    "wrap": true,
-                    "color": "#505050",
-                    "size": "sm",
-                    "flex": 10,
-                    "action": {
-                        "type": "message",
-                        "label": "action",
-                        "text": `hapus ${datacollection[i].id}`
+                    "type": "box",
+                    "layout": "baseline",
+                    "spacing": "sm",
+                    "contents": [
+                    {
+                        "type": "text",
+                        "text": datacollection[i].id,
+                        "color": "#505050",
+                        "size": "sm",
+                        "flex": 1,
+                        "decoration": "underline"
+                    },
+                    {
+                        "type": "text",
+                        "text": datacollection[i].task,
+                        "wrap": true,
+                        "color": "#505050",
+                        "size": "sm",
+                        "flex": 10,
+                        "action": {
+                            "type": "message",
+                            "label": "action",
+                            "text": `hapus ${datacollection[i].id}`
+                        }
                     }
+                    ]
                 }
-                ]
-            }
+                index++
             }
         }
-        // console.log(kata);
-        await context.sendFlex('user task', {
+        console.log(kata);
+        context.sendFlex('user task', {
             type: 'bubble',
             body: {
                 type: 'box',
