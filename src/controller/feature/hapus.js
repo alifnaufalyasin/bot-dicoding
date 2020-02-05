@@ -3,7 +3,7 @@ module.exports.hapus = {
     description: 'delete task',
     method: async context => {
         let profileuser;
-        const text = context.event.text.slice(7,context.event.text.length)
+        const text = context.event.text.slice(6,context.event.text.length)
         await context.getUserProfile().then(profile => {
             profileuser = profile
             // {
@@ -16,6 +16,7 @@ module.exports.hapus = {
         const MongoClient = require('mongodb').MongoClient;
         const uri = `mongodb+srv://adminbot:${process.env.PASSWORD_MONGO_DB}@bot-linecoba-78zrv.gcp.mongodb.net/test?retryWrites=true&w=majority`;
         const client = new MongoClient(uri, { useNewUrlParser: true });
+        console.log(text);
         client.connect(async (err) => {
             const collection = client.db("bot-dicoding").collection(profileuser.userId);
             const myquery = { id: text };
