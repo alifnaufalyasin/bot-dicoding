@@ -18,7 +18,7 @@ module.exports.hapus = {
         const client = new MongoClient(uri, { useNewUrlParser: true });
         client.connect(async (err) => {
             const collection = client.db("bot-dicoding").collection(profileuser.userId);
-            const myquery = { id: text[1] };
+            const myquery = { id: text };
             const newvalues = { $set: { status: false } };
             collection.updateOne(myquery, newvalues, function(err, res) {
                 if (err) throw err;
