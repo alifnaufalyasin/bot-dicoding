@@ -28,5 +28,6 @@ module.exports.tambah = {
                 client.close();
             })
         });
+        context.sendText('Berhasil menambahkan Task')
     }
 };

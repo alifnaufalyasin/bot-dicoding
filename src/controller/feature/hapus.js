@@ -27,6 +27,7 @@ module.exports.hapus = {
                 client.close();
               });
         })
+        context.sendText(text+' telah di hapus')
     },
 }
   
