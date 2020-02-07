@@ -18,7 +18,7 @@ const controllers = async (text, context) => {
   });
   if (!found) {
       console.log('tidak');
-    // await context.sendText(`Saya tidak mengetahui maksud dari "${context.event.text}"`);
+    await context.sendText(`Ketik 'menu' untuk mengetahui informasi bot ini`);
   }
 };
   module.exports = controllers;

@@ -25,13 +25,28 @@ module.exports.menu = {
             footer: {
                 type: 'box',
                 layout: 'vertical',
-                contents: [{
-                type: 'button',
-                action: {
-                    type: 'uri',
-                    label: 'Tambah',
-                    uri: 'line://app/1653803012-5QJqJ4PP',
-                    },
+                contents: [
+                // {
+                // type: 'button',
+                // action: {
+                //     type: 'uri',
+                //     label: 'Tambah',
+                //     uri: 'line://app/1653803012-5QJqJ4PP',
+                //     },
+                // },
+                {
+                    type: 'text',
+                    text: `Untuk menambahkan task ketik "tambah (spasi) task yang ingin di tambahkan"`,
+                    wrap: true,
+                    size: "sm",
+                    margin: 'sm',
+                },
+                {
+                    type: 'text',
+                    text: 'Untuk menghapus task cukup mengetuk task yang ada pada mytask',
+                    wrap: true,
+                    size: "sm",
+                    margin: 'sm',
                 },
                 {
                 type: 'button',
