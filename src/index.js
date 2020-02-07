@@ -15,7 +15,7 @@ const App = async context => {
   const uri = `mongodb+srv://adminbot:${process.env.PASSWORD_MONGO_DB}@bot-linecoba-78zrv.gcp.mongodb.net/test?retryWrites=true&w=majority`;
   const client = new MongoClient(uri, { useNewUrlParser: true });
   try{
-  if (context.event.isFollow) {
+  if (context.event.isFollow || context.event.isJoin) {
     await client.connect(async err => {
       const database = client.db("bot-dicoding")
       database.listCollections().toArray(async function(err, colnamedb) {
@@ -46,7 +46,7 @@ const App = async context => {
       "text": "Untuk petunjuk penggunaan bisa dilihat di timeline kami"
     }]),
     console.log(context.event.follow)
-  } else if (context.event.isUnfollow) {
+  } else if (context.event.isUnfollow || context.event.isLeave) {
     context.send([{
         "type": "text",
         "text": "Terimakasih sudah mempercayakan kami untuk membantu kamu dalam menyimpan tugas2 mu, mohon maaf jika kami kurang membantu"
