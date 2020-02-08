@@ -15,5 +15,4 @@ atau scan qr code ini
 - ketuk button 'mytask' pada menu untuk melihat task yang sudah kamu simpan
 
 ini contoh chat dengan bot nya 
-![alt text](https://github.com/alifnaufalyasin/bot-dicoding/blob/master/dokumentasi/1013572.jpg)
-![alt text](https://github.com/alifnaufalyasin/bot-dicoding/blob/master/dokumentasi/1013573.jpg)
+![alt text](https://github.com/alifnaufalyasin/bot-dicoding/blob/master/dokumentasi/1013594.jpg)
