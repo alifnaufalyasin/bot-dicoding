@@ -17,7 +17,7 @@ const controllers = async (text, context) => {
     }
   });
   if (!found) {
-      console.log('tidak');
+    console.log('tidak');
     await context.sendText(`Ketik 'menu' untuk mengetahui informasi bot ini`);
   }
 };

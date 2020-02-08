@@ -26,14 +26,6 @@ module.exports.menu = {
                 type: 'box',
                 layout: 'vertical',
                 contents: [
-                // {
-                // type: 'button',
-                // action: {
-                //     type: 'uri',
-                //     label: 'Tambah',
-                //     uri: 'line://app/1653803012-5QJqJ4PP',
-                //     },
-                // },
                 {
                     type: 'text',
                     text: `Untuk menambahkan task ketik "tambah (spasi) task yang ingin di tambahkan"`,
@@ -48,6 +40,14 @@ module.exports.menu = {
                     size: "sm",
                     margin: 'sm',
                 },
+                // {
+                // type: 'button',
+                // action: {
+                //     type: 'uri',
+                //     label: 'Tambah',
+                //     uri: 'line://app/1653803012-5QJqJ4PP',
+                //     },
+                // },
                 {
                 type: 'button',
                 action:{
