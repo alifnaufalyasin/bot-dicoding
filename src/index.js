@@ -40,7 +40,7 @@ const App = async context => {
     })
     await context.send([{
       "type": "text",
-      "text": "Terimakasih sudah mempercayakan kami untuk membantu kamu dalam menyimpan tugas2 mu"
+      "text": "Terimakasih sudah mempercayakan kami untuk membantu kamu dalam menyimpan catatan mu"
     },{ 
       "type": "text",
       "text": `Untuk petunjuk penggunaan bisa dilihat di timeline kami atau ketik 'menu'`
@@ -49,10 +49,10 @@ const App = async context => {
   } else if (context.event.isUnfollow || context.event.isLeave) {
     context.send([{
         "type": "text",
-        "text": "Terimakasih sudah mempercayakan kami untuk membantu kamu dalam menyimpan tugas2 mu, mohon maaf jika kami kurang membantu"
+        "text": "Terimakasih sudah mempercayakan kami untuk membantu kamu dalam menyimpan catatan mu, mohon maaf jika kurang membantu"
     },{ 
       "type": "text", 
-      "text": "Jangan sungkan-sungkan untuk add kami kembali ya"
+      "text": "Jangan sungkan-sungkan untuk add aku lagi ya"
     }])
     console.log(context.event.unfollow);
   } else 
