@@ -43,7 +43,7 @@ const App = async context => {
       "text": "Terimakasih sudah mempercayakan kami untuk membantu kamu dalam menyimpan tugas2 mu"
     },{ 
       "type": "text",
-      "text": "Untuk petunjuk penggunaan bisa dilihat di timeline kami"
+      "text": `Untuk petunjuk penggunaan bisa dilihat di timeline kami atau ketik 'menu'`
     }]),
     console.log(context.event.follow)
   } else if (context.event.isUnfollow || context.event.isLeave) {
