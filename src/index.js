@@ -78,6 +78,8 @@ const App = async context => {
     });
     const param = context.event.text.split(' ');
     await controllers(param, context);
+  }else{
+    console.log(context.event)
   }
   }catch(err){
     console.log('err');
