@@ -1,4 +1,5 @@
-exports.tambahTask = (req, res, next) => {
+exports.tambahTask = (req, res) => {
+    console.log("Test")
     const payload = req.body;
     console.log(payload)
     // const MongoClient = require('mongodb').MongoClient;
