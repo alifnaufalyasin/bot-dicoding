@@ -1,6 +1,7 @@
 const bodyParser = require('body-parser');
 const express = require('express');
 const { bottender } = require('bottender');
+const { tambahTask } = require("./src/module/tambahTaskbahTask")
 
 const app = bottender({
   dev: process.env.NODE_ENV !== 'production',
@@ -23,7 +24,8 @@ app.prepare().then(() => {
   );
 
   // your custom route
-  server.use('/liff', express.static("liff"))
+  server.use('/liff', express.static("liff"));
+  server.post("/tambahTask", tambahTask);
 
   // route for webhook request
   server.all('*', (req, res) => {
