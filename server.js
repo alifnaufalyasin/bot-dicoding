@@ -25,7 +25,7 @@ app.prepare().then(() => {
 
   // your custom route
   server.use('/liff', express.static("liff"));
-  server.post("/tambahTask", (app.use(express.json()), bodyParser.json(),bodyParser.urlencoded({ extended: false })),async (req, res) => {
+  server.post("/tambahTask", (req,res) => {
     console.log("Test");
     console.log(req);
   })
