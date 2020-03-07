@@ -40,14 +40,14 @@ module.exports.menu = {
                     size: "sm",
                     margin: 'sm',
                 },
-                // {
-                // type: 'button',
-                // action: {
-                //     type: 'uri',
-                //     label: 'Tambah',
-                //     uri: 'line://app/1653803012-5QJqJ4PP',
-                //     },
-                // },
+                {
+                type: 'button',
+                action: {
+                    type: 'uri',
+                    label: 'Tambah',
+                    uri: 'line://app/1653926328-kewjzv9B',
+                    },
+                },
                 {
                 type: 'button',
                 action:{
