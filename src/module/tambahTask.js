@@ -1,5 +1,5 @@
-exports.tambahTask = (app.use(express.json()), bodyParser.json(),bodyParser.urlencoded({ extended: false })),async (req, res) => {
-    console.log("Test") 
+exports.tambahTask = (req, res) => {
+    console.log("Test")
     const payload = req.body;
     console.log(payload)
     // const MongoClient = require('mongodb').MongoClient;
