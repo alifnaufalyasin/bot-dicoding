@@ -23,7 +23,7 @@ app.prepare().then(() => {
   );
 
   // your custom route
-  server.get('/liff', express.static("liff"))
+  server.use('/liff', express.static("liff"))
 
   // route for webhook request
   server.all('*', (req, res) => {
