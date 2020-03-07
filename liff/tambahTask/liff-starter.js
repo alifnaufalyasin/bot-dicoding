@@ -1,6 +1,6 @@
 // require('dotenv').config();
 window.onload = function() {
-  let myLiffId = "1653863954-zYegxwZX";
+  let myLiffId = "1653926328-kewjzv9B";
   initializeLiff(myLiffId);
 };
 
