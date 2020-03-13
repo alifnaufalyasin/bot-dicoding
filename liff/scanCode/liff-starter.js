@@ -19,10 +19,10 @@ function initializeLiff(myLiffId) {
     .catch(err => {
       window.location = "./"
     });
-  if (liff.scanCode) {
+  // if (liff.scanCode) {
     liff.scanCode().then(result => {
       console.log(result);
-      document.getElementById("test").value = result;
+      document.getElementById("test").value = result.value;
     })
-  }
+  // }
 }
