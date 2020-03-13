@@ -1,7 +1,7 @@
 const bodyParser = require('body-parser');
 const express = require('express');
 const { bottender } = require('bottender');
-// const { tambahTask } = require("./src/module/tambahTask")
+const { tambahTask } = require("./src/module/tambahTask")
 
 const app = bottender({
   dev: process.env.NODE_ENV !== 'production',
@@ -28,10 +28,8 @@ app.prepare().then(() => {
   // server.use(useragent.express())
   server.use(bodyParser.json())
   server.use('/liff', express.static("liff"));
-  server.post("/tambahTask", (req,res) => {
-    console.log("Test");
-    console.log(req);
-    
+  server.post("/tambahTask", (server.use(express.json()), bodyParser.json(),bodyParser.urlencoded({ extended: false })), async (req, res) => {
+    await tambahTask(req);
   })
 
   // route for webhook request
