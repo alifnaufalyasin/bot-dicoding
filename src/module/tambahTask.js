@@ -1,4 +1,4 @@
-exports.tambahTask = (req, res) => {
+exports.tambahTask = (req) => {
     console.log("Test")
     const payload = req.body;
     console.log(payload)

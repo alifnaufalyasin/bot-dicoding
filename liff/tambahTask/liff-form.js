@@ -16,9 +16,19 @@ function initializeLiff(myLiffId) {
       getProfile();
       
       document.getElementById("btnSubmit").addEventListener("click", () => {
-        if (notEmpty() == "Terisi"){
+          liff.sendMessages([
+            {
+              type:'text',
+              text:'Berhasil menambahkan task'
+            }
+          ])
+          .then(() => {
+            console.log('message sent');
             liff.closeWindow();
-        }
+          })
+          .catch((err) => {
+            console.log('error', err);
+          });  
       });
     })
     .catch(err => {
