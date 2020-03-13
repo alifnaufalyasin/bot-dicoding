@@ -1,6 +1,6 @@
-// require('dotenv').config();
+// line://app/1653926328-BDOQPjrE
 window.onload = function() {
-  let myLiffId = "1653926328-kewjzv9B";
+  let myLiffId = "1653926328-BDOQPjrE";
   initializeLiff(myLiffId);
 };
 
@@ -17,6 +17,7 @@ function initializeLiff(myLiffId) {
         // window.location = "./form.html"
         liff.scanCode().then(result => {
           console.log(result);
+          document.getElementById("test").value = result;
         })
     })
     .catch(err => {
