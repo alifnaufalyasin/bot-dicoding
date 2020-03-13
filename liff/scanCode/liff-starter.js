@@ -8,8 +8,8 @@ window.onload = function() {
  * Initialize LIFF
  * @param {string} myLiffId The LIFF ID of the selected element
  */
-function initializeLiff(myLiffId) {
-  liff
+async function initializeLiff(myLiffId) {
+  await liff
     .init({
       liffId: myLiffId
     })
@@ -20,7 +20,7 @@ function initializeLiff(myLiffId) {
       window.location = "./"
     });
   // if (liff.scanCode) {
-    liff.scanCode().then(result => {
+    await liff.scanCode().then(result => {
       console.log(result);
       document.getElementById("test").value = result.value;
     })
