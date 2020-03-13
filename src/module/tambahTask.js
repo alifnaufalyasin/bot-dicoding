@@ -1,5 +1,7 @@
 exports.tambahTask = async (req) => {
     // console.log("Test")
+require('dotenv').config()
+    
     const payload = req.body;
     console.log(payload)
     const MongoClient = require('mongodb').MongoClient;
