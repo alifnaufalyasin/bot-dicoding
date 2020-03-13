@@ -14,7 +14,7 @@ function initializeLiff(myLiffId) {
     })
     .then(() => {
       getProfile();
-      document.getElementById("btnSubmit").addEventListener("click", () => {
+      document.getElementById("scanCode").addEventListener("click", () => {
         liff.scanCode().then(result => {
           liff.sendMessages([
             {
