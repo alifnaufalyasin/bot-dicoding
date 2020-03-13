@@ -23,12 +23,12 @@ async function initializeLiff(myLiffId) {
         ])
         .then(() => {
           console.log('message sent');
-          liff.closeWindow();
+          document.getElementById("test").value = result.value;
+          // liff.closeWindow();
         })
         .catch((err) => {
           console.log('error', err);
         });  
-        document.getElementById("test").value = result.value;
       })
         // window.location = "./form.html"
     })
