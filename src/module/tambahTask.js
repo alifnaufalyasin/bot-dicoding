@@ -1,4 +1,4 @@
-exports.tambahTask = (req) => {
+exports.tambahTask = async (req) => {
     // console.log("Test")
     const payload = req.body;
     // console.log(payload)
