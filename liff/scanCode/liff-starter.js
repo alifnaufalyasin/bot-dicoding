@@ -14,7 +14,7 @@ async function initializeLiff(myLiffId) {
       liffId: myLiffId
     })
     .then(() => {
-      await liff.scanCode().then(result => {
+      liff.scanCode().then(result => {
         liff.sendMessages([
           {
             type:'text',
