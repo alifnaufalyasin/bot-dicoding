@@ -14,21 +14,7 @@ function initializeLiff(myLiffId) {
     })
     .then(() => {
       getProfile();
-      document.getElementById("scanCode").addEventListener("click", () => {
-        liff.scanCode().then(result => {
-          liff.sendMessages([
-            {
-              type:'text',
-              text: result.value
-            }
-          ])
-          .then(() => {
-            console.log('message sent');
-            liff.closeWindow();
-          })
-        // document.getElementById("test").value = result.value;
-        })
-      })
+      
       document.getElementById("btnSubmit").addEventListener("click", () => {
           liff.sendMessages([
             {
