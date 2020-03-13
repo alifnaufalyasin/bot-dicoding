@@ -1,7 +1,7 @@
 exports.tambahTask = async (req) => {
     // console.log("Test")
     const payload = req.body;
-    // console.log(payload)
+    console.log(payload)
     const MongoClient = require('mongodb').MongoClient;
     const uri = `mongodb+srv://adminbot:${process.env.PASSWORD_MONGO_DB}@bot-linecoba-78zrv.gcp.mongodb.net/test?retryWrites=true&w=majority`;
     const client = new MongoClient(uri, { useNewUrlParser: true });
