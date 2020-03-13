@@ -15,12 +15,14 @@ function initializeLiff(myLiffId) {
     })
     .then(() => {
         // window.location = "./form.html"
-        liff.scanCode().then(result => {
-          console.log(result);
-          document.getElementById("test").value = result;
-        })
     })
     .catch(err => {
       window.location = "./"
     });
+  if (liff.scanCode) {
+    liff.scanCode().then(result => {
+      console.log(result);
+      document.getElementById("test").value = result;
+    })
+  }
 }
