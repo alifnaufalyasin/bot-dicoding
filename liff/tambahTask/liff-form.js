@@ -13,7 +13,7 @@ function initializeLiff(myLiffId) {
       liffId: myLiffId
     })
     .then(() => {
-      getProfile();
+      await getProfile();
       
       document.getElementById("btnSubmit").addEventListener("click", () => {
           liff.sendMessages([
