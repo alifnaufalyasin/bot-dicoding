@@ -1,5 +1,5 @@
 window.onload = function() {
-  let myLiffId = 1653926328-kewjzv9B;
+  let myLiffId = "1653926328-kewjzv9B";
   initializeLiff(myLiffId);
 };
 
