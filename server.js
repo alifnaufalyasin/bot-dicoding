@@ -29,7 +29,7 @@ app.prepare().then(() => {
   // server.use(bodyParser.json())
   server.use('/liff', express.static("liff"));
   server.post("/tambahTask", (server.use(express.json()), bodyParser.json(),bodyParser.urlencoded({ extended: false })), async (req, res) => {
-    await tambahTask(req);
+    await tambahTask(req.body);
   })
 
   // route for webhook request

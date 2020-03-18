@@ -1,8 +1,7 @@
-exports.tambahTask = async (req) => {
+exports.tambahTask = async (payload) => {
     // console.log("Test")
 require('dotenv').config()
     
-    const payload = req.body;
     console.log(payload)
     const MongoClient = require('mongodb').MongoClient;
     const uri = `mongodb+srv://adminbot:${process.env.PASSWORD_MONGO_DB}@bot-linecoba-78zrv.gcp.mongodb.net/test?retryWrites=true&w=majority`;
