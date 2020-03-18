@@ -1,6 +1,6 @@
 const bodyParser = require('body-parser');
 const express = require('express');
-const { bottender, Context } = require('bottender');
+const { bottender, LineContext } = require('bottender');
 const { tambahTask } = require("./src/module/tambahTask");
 const { check } = require('./src/module/check');
 
@@ -32,8 +32,8 @@ app.prepare().then(() => {
   server.post('/tambahTask', (server.use(express.json()), bodyParser.json(),bodyParser.urlencoded({ extended: false })), async (req, res) => {
     await tambahTask(req.body);
   })
-  server.get('/check', async (req,res)=>{
-    await check(Context)
+  server.get('/check',(req,res)=>{
+    await check()
     res.send("haii")
   })
 
