@@ -31,7 +31,7 @@ app.prepare().then(() => {
   server.post('/tambahTask', (server.use(express.json()), bodyParser.json(),bodyParser.urlencoded({ extended: false })), async (req, res) => {
     await tambahTask(req.body);
   })
-  server.post('/check',(req,res)=>{
+  server.get('/check',(req,res)=>{
     res.send("haii")
   })
 
