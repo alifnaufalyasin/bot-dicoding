@@ -10,6 +10,8 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
+    <!-- Flatpickr CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
     <title>Form Tambah Task</title>
 </head>
 <body>
@@ -20,6 +22,10 @@
             <div class="form-group">
                 <label for="inputTask">Masukkan Task kamu</label>
                 <input type="text" name="Task" class="form-control" id="inputTask" placeholder="Ketik Task kamu disini..." required>
+            </div>
+            <div class="form-group">
+                <label for="inputNomor">Due Date </label>
+                <input placeholder="Pilih tanggal..." type="date" class="form-control" name="tanggal" id="tanggal" required style="border-radius:3px;">
             </div>
             <button id="btnSubmit" class="btn" type="submit" style="visibility:hidden; background-color:#91F9E5; outline-color: lightblue; color: black;">Submit</button>
             <input type="text" name="userId" class="form-control" id="userId" style="visibility: hidden;">
@@ -41,6 +47,10 @@
     <script src="https://www.gstatic.com/firebasejs/6.2.0/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/6.2.0/firebase-auth.js"></script>    
     <script src="https://www.gstatic.com/firebasejs/6.2.0/firebase-database.js"></script>
+    <!-- Library Flatpicker -->
+    <script src="https://npmcdn.com/flatpickr/dist/flatpickr.min.js"></script>
+    <!-- Plugin Locale Calendar Indonesia (optional) -->
+    <script src="https://npmcdn.com/flatpickr/dist/l10n/id.js"></script>
     <script type="text/javascript" src="./liff-form.js"></script>
 </body>
 
