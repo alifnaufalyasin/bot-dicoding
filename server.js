@@ -31,6 +31,9 @@ app.prepare().then(() => {
   server.post('/tambahTask', (server.use(express.json()), bodyParser.json(),bodyParser.urlencoded({ extended: false })), async (req, res) => {
     await tambahTask(req.body);
   })
+  server.get('/check',(req,res)=>{
+    res.send("haii")
+  })
 
   // route for webhook request
   server.all('*', (req, res) => {
