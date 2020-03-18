@@ -26,7 +26,7 @@ app.prepare().then(() => {
   // your custom route
   server.use(bodyParser.urlencoded({extended:true}))
   // server.use(useragent.express())
-  server.use(bodyParser.json())
+  // server.use(bodyParser.json())
   server.use('/liff', express.static("liff"));
   server.post("/tambahTask", (server.use(express.json()), bodyParser.json(),bodyParser.urlencoded({ extended: false })), async (req, res) => {
     await tambahTask(req);
