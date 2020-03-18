@@ -1,7 +1,8 @@
 const bodyParser = require('body-parser');
 const express = require('express');
-const { bottender } = require('bottender');
-const { tambahTask } = require("./src/module/tambahTask")
+const { bottender, Context } = require('bottender');
+const { tambahTask } = require("./src/module/tambahTask");
+const { check } = require('./src/module/check');
 
 const app = bottender({
   dev: process.env.NODE_ENV !== 'production',
@@ -32,6 +33,7 @@ app.prepare().then(() => {
     await tambahTask(req.body);
   })
   server.get('/check',(req,res)=>{
+    await check(Context)
     res.send("haii")
   })
 
