@@ -1,17 +1,18 @@
 window.onload = function() {
   let myLiffId = "1653926328-kewjzv9B"
-$("#tanggal").flatpickr({
-  minDate: new Date().fp_incr(2),
-  maxDate: new Date().fp_incr(60),
-  "locale": "id",
-  "disable": [
-    function(date) {
-        // to disable damn sunday
-        return (date.getDay() === 0);
-    }
-  ]
-});
-initializeLiff(myLiffId);
+  initializeLiff(myLiffId);
+  
+  $("#tanggal").flatpickr({
+    minDate: new Date().fp_incr(2),
+    maxDate: new Date().fp_incr(60),
+    "locale": "id",
+    "disable": [
+      function(date) {
+          // to disable damn sunday
+          return (date.getDay() === 0);
+      }
+    ]
+  });
 
 };
 
