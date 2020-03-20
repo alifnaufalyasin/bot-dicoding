@@ -25,6 +25,7 @@ module.exports.mytask = {
         console.log(idx)
         // console.log(datacollection)
         let index = 0;                
+        
         for (let i=0;i<idx;i++){
             if (datacollection[i].status){
                 kata[index] = 
